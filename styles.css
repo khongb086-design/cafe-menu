@@ -1,0 +1,51 @@
+/* Thiết lập chung */
+body {
+    font-family: Arial, sans-serif; /* Chọn phông chữ */
+    background-color: #f7f3e8; /* Màu nền nhẹ nhàng, giống giấy */
+    color: #333; /* Màu chữ chính */
+    margin: 0;
+    padding: 20px;
+    text-align: center;
+}
+
+header h1 {
+    color: #4a2c00; /* Màu nâu đậm cho tiêu đề */
+    font-size: 2.5em;
+    margin-bottom: 5px;
+}
+
+/* Khung chứa Menu */
+.menu-container {
+    max-width: 600px;
+    margin: 30px auto;
+    padding: 20px;
+    background-color: #ffffff; /* Nền trắng cho phần menu */
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Tiêu đề mục (Ví dụ: Cà Phê Truyền Thống) */
+h2 {
+    color: #6d4c41; /* Màu nâu cà phê */
+    border-bottom: 2px solid #bcaaa4; /* Đường kẻ dưới nhẹ */
+    padding-bottom: 5px;
+    margin-top: 30px;
+    font-size: 1.5em;
+    text-align: left;
+}
+
+/* Thiết lập cho từng món */
+.menu-item {
+    display: flex; /* Sắp xếp tên và giá trên cùng một hàng */
+    justify-content: space-between; /* Đẩy tên sang trái, giá sang phải */
+    padding: 10px 0;
+    border-bottom: 1px dotted #e0e0e0; /* Đường kẻ chấm nhỏ */
+}
+
+.menu-item .name {
+    font-weight: bold;
+}
+
+.menu-item .price {
+    color: #9c6c39; /* Màu giá tiền nổi bật */
+}

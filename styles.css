@@ -108,3 +108,32 @@ footer {
     padding-top: 10px;
     color: #666;
 }
+/* --- PHẦN GỬI ĐƠN HÀNG (CHECKOUT) --- */
+.checkout-area {
+    text-align: center;
+    padding: 30px 0 20px 0;
+}
+
+.checkout-area button {
+    background-color: #d84315; /* Màu nổi bật (Cam/Đỏ) */
+    color: white;
+    padding: 15px 30px;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.2em;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+.checkout-area button:hover {
+    background-color: #bf360c; /* Đậm hơn khi di chuột */
+}
+
+.thong-bao {
+    margin-top: 15px;
+    font-style: italic;
+    color: #388e3c; /* Màu xanh lá cây cho thông báo */
+    font-weight: bold;
+}

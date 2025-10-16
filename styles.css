@@ -1,15 +1,16 @@
 /* Thiết lập chung */
 body {
-    font-family: Arial, sans-serif; /* Chọn phông chữ */
+    font-family: Arial, sans-serif; 
     background-color: #f7f3e8; /* Màu nền nhẹ nhàng, giống giấy */
-    color: #333; /* Màu chữ chính */
+    color: #333; 
     margin: 0;
     padding: 20px;
     text-align: center;
+    color-scheme: light; /* BẮT BUỘC chế độ sáng để tránh bị Dark Mode */
 }
 
 header h1 {
-    color: #4a2c00; /* Màu nâu đậm cho tiêu đề */
+    color: #4a2c00; 
     font-size: 2.5em;
     margin-bottom: 5px;
 }
@@ -19,27 +20,34 @@ header h1 {
     max-width: 600px;
     margin: 30px auto;
     padding: 20px;
-    background-color: #ffffff; /* Nền trắng cho phần menu */
+    background-color: #ffffff; 
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: left; /* Căn trái cho nội dung menu */
 }
 
 /* Tiêu đề mục (Ví dụ: Cà Phê Truyền Thống) */
 h2 {
-    color: #6d4c41; /* Màu nâu cà phê */
-    border-bottom: 2px solid #bcaaa4; /* Đường kẻ dưới nhẹ */
+    color: #6d4c41; 
+    border-bottom: 2px solid #bcaaa4; 
     padding-bottom: 5px;
     margin-top: 30px;
     font-size: 1.5em;
-    text-align: left;
+    margin-bottom: 15px;
 }
 
 /* Thiết lập cho từng món */
 .menu-item {
+    padding: 10px 0;
+    border-bottom: 1px dotted #e0e0e0;
+    margin-bottom: 15px; /* Thêm khoảng cách dưới cho mỗi mục */
+}
+
+/* Header của mục (Tên và Giá) */
+.item-header, .menu-item:not(.item-with-options) {
     display: flex; /* Sắp xếp tên và giá trên cùng một hàng */
     justify-content: space-between; /* Đẩy tên sang trái, giá sang phải */
-    padding: 10px 0;
-    border-bottom: 1px dotted #e0e0e0; /* Đường kẻ chấm nhỏ */
+    font-size: 1.1em;
 }
 
 .menu-item .name {
@@ -47,5 +55,56 @@ h2 {
 }
 
 .menu-item .price {
-    color: #9c6c39; /* Màu giá tiền nổi bật */
+    color: #9c6c39; 
+    font-weight: bold;
+}
+
+
+/* --- PHẦN TRANG TRÍ TÙY CHỌN THÊM (ADD-ONS) --- */
+
+/* Khung chứa các tùy chọn */
+.options {
+    margin-top: 10px;
+    padding: 10px 0 0 15px; /* Đệm vào trong để các nút radio không bị sát lề */
+    background-color: #fafafa; /* Nền xám nhẹ để phân biệt */
+    border-radius: 5px;
+    font-size: 0.9em;
+    color: #555;
+    border-top: 1px dashed #eee;
+}
+
+/* Tiêu đề tùy chọn (Chọn Size, Chọn Lượng Đường) */
+.option-title {
+    font-weight: bold;
+    margin: 5px 0 5px 0;
+    color: #6d4c41; /* Màu nâu cà phê */
+}
+
+/* Định dạng các nút radio/checkbox và label */
+.options label {
+    display: block; 
+    margin-bottom: 5px;
+    cursor: pointer;
+}
+
+.options input[type="radio"] {
+    margin-right: 5px;
+    accent-color: #6d4c41; /* Đổi màu dấu tích/chọn */
+}
+
+/* Định dạng Dropdown List */
+.options select {
+    padding: 5px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    width: 60%; 
+    margin: 5px 0 10px 0; /* Khoảng cách dưới */
+    display: block; /* Chiếm cả một dòng */
+}
+
+footer {
+    text-align: center;
+    margin-top: 40px;
+    padding-top: 10px;
+    color: #666;
 }

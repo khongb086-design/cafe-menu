@@ -3,42 +3,112 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Menu Quán Cà Phê</title>
+    <title>Menu Cà Phê Mở Rộng</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
     <header>
-        <h1>[Quán Cà Phê Của BearKa]</h1>
+        <h1>BEARKA CAFE MENU</h1>
         <p>Thưởng thức hương vị tuyệt vời</p>
     </header>
 
     <div class="menu-container">
 
-        <h2>Cà Phê Truyền Thống</h2>
-        <div class="menu-item">
-            <span class="name">Cà Phê Đen Đá</span>
-            <span class="price">25.000đ</span>
-        </div>
-        <div class="menu-item">
-            <span class="name">Cà Phê Sữa Đá</span>
-            <span class="price">30.000đ</span>
-        </div>
-        
-        <h2>Đồ Uống Đặc Biệt</h2>
-        <div class="menu-item">
-            <span class="name">Latte Caramel</span>
-            <span class="price">45.000đ</span>
-        </div>
-        <div class="menu-item">
-            <span class="name">Trà Vải Mật Ong</span>
-            <span class="price">40.000đ</span>
-        </div>
+        <section class="menu-section">
+            <h2>1. Cà Phê Truyền Thống</h2>
+            
+            <div class="menu-item item-with-options">
+                <div class="item-header">
+                    <span class="name">Cà Phê Đen Đá (Đá/Nóng)</span>
+                    <span class="price">25.000đ</span>
+                </div>
+                <div class="options">
+                    <p class="option-title">Chọn Size:</p>
+                    <label><input type="radio" name="size_den_da" value="S" checked> Nhỏ (25.000đ)</label>
+                    <label><input type="radio" name="size_den_da" value="L"> Lớn (+10.000đ)</label>
+                </div>
+            </div>
+            
+            <div class="menu-item item-with-options">
+                <div class="item-header">
+                    <span class="name">Cà Phê Sữa Đá</span>
+                    <span class="price">30.000đ</span>
+                </div>
+                <div class="options">
+                    <p class="option-title">Chọn Size:</p>
+                    <label><input type="radio" name="size_sua_da" value="S" checked> Nhỏ (30.000đ)</label>
+                    <label><input type="radio" name="size_sua_da" value="L"> Lớn (+10.000đ)</label>
+                    
+                    <p class="option-title">Chọn Lượng Đường:</p>
+                    <select name="sugar_sua">
+                        <option value="100">100% (Tiêu chuẩn)</option>
+                        <option value="50">50%</option>
+                        <option value="0">Không đường</option>
+                    </select>
+                </div>
+            </div>
+            
+            <div class="menu-item">
+                <span class="name">Bạc Xỉu (Đá/Nóng)</span>
+                <span class="price">35.000đ</span>
+            </div>
+        </section>
+
+        <section class="menu-section">
+            <h2>2. Cà Phê Hiện Đại (Espresso)</h2>
+            
+            <div class="menu-item">
+                <span class="name">Espresso</span>
+                <span class="price">30.000đ</span>
+            </div>
+
+            <div class="menu-item">
+                <span class="name">Americano (Đá/Nóng)</span>
+                <span class="price">40.000đ</span>
+            </div>
+            
+            <div class="menu-item item-with-options">
+                <div class="item-header">
+                    <span class="name">Latte (Đá/Nóng)</span>
+                    <span class="price">45.000đ</span>
+                </div>
+                <div class="options">
+                    <p class="option-title">Chọn Vị:</p>
+                    <label><input type="radio" name="flavour_latte" value="original" checked> Truyền Thống</label>
+                    <label><input type="radio" name="flavour_latte" value="caramel"> Caramel (+5.000đ)</label>
+                    <label><input type="radio" name="flavour_latte" value="hazelnut"> Hazelnut (+5.000đ)</label>
+                </div>
+            </div>
+            
+            <div class="menu-item">
+                <span class="name">Cappuccino (Nóng)</span>
+                <span class="price">45.000đ</span>
+            </div>
+
+        </section>
+
+        <section class="menu-section">
+            <h2>3. Đồ Uống Khác</h2>
+            
+            <div class="menu-item">
+                <span class="name">Trà Đào Cam Sả</span>
+                <span class="price">45.000đ</span>
+            </div>
+            <div class="menu-item">
+                <span class="name">Trà Vải Mật Ong</span>
+                <span class="price">40.000đ</span>
+            </div>
+            <div class="menu-item">
+                <span class="name">Soda Việt Quất</span>
+                <span class="price">50.000đ</span>
+            </div>
+        </section>
 
     </div>
 
     <footer>
-        <p>Cảm ơn quý khách!</p>
+        <p>Hotline: 0123.456.789 | Cảm ơn quý khách!</p>
     </footer>
 
 </body>

@@ -107,9 +107,69 @@
 
     </div>
 
+    <div class="checkout-area">
+    <button onclick="xemDonHang()">
+        GỬI ĐƠN HÀNG
+    </button>
+    <p class="thong-bao" id="order-feedback"></p>
+</div>
     <footer>
         <p>Hotline: 0123.456.789 | Cảm ơn quý khách!</p>
     </footer>
 
+<script>
+    function xemDonHang() {
+        let donHang = "Đơn Hàng Của Bạn:\n";
+        let coMonAn = false;
+
+        // Lấy tất cả các món (radio button, select) để xem khách chọn gì
+        const items = document.querySelectorAll('.menu-item');
+
+        items.forEach(item => {
+            const tenMon = item.querySelector('.name')?.textContent;
+            let chiTiet = '';
+
+            // Lấy lựa chọn Radio Buttons (Size/Flavour)
+            const radios = item.querySelectorAll('input[type="radio"]:checked');
+            radios.forEach(radio => {
+                chiTiet += ` - ${radio.closest('label').textContent.trim()}`;
+            });
+
+            // Lấy lựa chọn Dropdown (Đường/Sữa)
+            const selects = item.querySelectorAll('select');
+            selects.forEach(select => {
+                if (select.value) {
+                    const title = select.previousElementSibling.textContent.replace(':', '');
+                    chiTiet += ` - ${title}: ${select.options[select.selectedIndex].text}`;
+                }
+            });
+
+            // Nếu có bất kỳ lựa chọn nào (tức là khách đã quan tâm đến món đó)
+            if (chiTiet !== '' || tenMon && radios.length > 0) {
+                donHang += `\n ${tenMon}:`;
+                donHang += chiTiet;
+                coMonAn = true;
+            }
+        });
+
+        const feedback = document.getElementById('order-feedback');
+
+        if (coMonAn) {
+            // Hiển thị thông báo (Alert) để xem đơn hàng
+            alert(donHang); 
+
+            // Cách chia sẻ đơn hàng qua Zalo/Email (thay số điện thoại)
+            const formattedText = encodeURIComponent(donHang);
+            const zaloLink = `https://zalo.me/sdt-cua-quan?text=${formattedText}`;
+
+            feedback.textContent = "Đơn hàng đã được tạo. Bạn có thể nhấn Gửi lần nữa để chia sẻ qua Zalo/Email, hoặc xem đơn hàng bên trên.";
+
+            // *Nếu bạn muốn mở Zalo/Email tự động:
+            // window.open(zaloLink, '_blank'); 
+        } else {
+            feedback.textContent = "Vui lòng chọn món trước khi gửi đơn hàng!";
+        }
+    }
+</script>
 </body>
 </html>
